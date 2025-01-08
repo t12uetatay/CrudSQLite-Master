@@ -50,12 +50,13 @@ public class MainActivity extends AppCompatActivity implements SiswaAdapter.Adap
     }
 
     private void onLoadData(){
-        mAdapter = new SiswaAdapter(db.readAllSiswa(), this);
+        mAdapter = new SiswaAdapter(MainActivity.this, this);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new Space(20, 0));
         recyclerView.setAdapter(mAdapter);
+        mAdapter.setDataList(db.readAllSiswa());
     }
 
     @Override
@@ -96,13 +97,9 @@ public class MainActivity extends AppCompatActivity implements SiswaAdapter.Adap
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (which == 0) {
-                            //Intent i = new Intent(getActivity(), EditorSiswaActivity.class);
-                            //i.putExtra("tag", "edit");
-                            //i.putExtra("data", siswa);
-                            //getActivity().startActivity(i);
-
-
-
+                            Intent i = new Intent(MainActivity.this, UpdateActivity.class);
+                            i.putExtra("nis", String.valueOf(siswa.getNis()));
+                            startActivity(i);
                         } else {
                             actionDelete(siswa);
                         }

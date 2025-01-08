@@ -15,9 +15,10 @@ import java.util.List;
 public class SiswaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Siswa> siswaList;
     private AdapterListener listener;
+    private Context mCtx;
 
-    public SiswaAdapter(List<Siswa> list, AdapterListener listener) {
-        this.siswaList = list;
+    public SiswaAdapter(Context context, AdapterListener listener) {
+        this.mCtx = context;
         this.listener=listener;
     }
 

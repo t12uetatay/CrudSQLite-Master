@@ -14,6 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -53,21 +55,58 @@ public class CreateActivity extends AppCompatActivity {
         findViewById(R.id.btn_simpan).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String jk="-";
-                if (rbL.isChecked()){
-                    jk=rbL.getText().toString();
-                } else if (rbP.isChecked()){
-                    jk=rbP.getText().toString();
+                if (validasiForm()){
+                    String jk="-";
+                    if (rbL.isChecked()){
+                        jk=rbL.getText().toString();
+                    } else if (rbP.isChecked()){
+                        jk=rbP.getText().toString();
+                    }
+                    db.createSiswa(new Siswa(
+                            Integer.parseInt(inpNis.getText().toString()),
+                            inpNama.getText().toString(),
+                            jk,
+                            spnKk.getSelectedItem().toString()
+                    ));
+                    resetForm();
                 }
-                db.createSiswa(new Siswa(
-                        Integer.parseInt(inpNis.getText().toString()),
-                        inpNama.getText().toString(),
-                        jk,
-                        spnKk.getSelectedItem().toString()
-                ));
-                resetForm();
             }
         });
+    }
+
+    private Boolean validasiForm(){
+        Boolean valid=false;
+        if (inpNis.getText().toString().length()==0){
+            lyNis.setError("NIS harus di isi!");
+            valid = false;
+        } else {
+            lyNis.setError(null);
+            valid = true;
+        }
+
+        if (inpNama.getText().toString().length()==0){
+            lyNama.setError("Nama harus di isi!");
+            valid = false;
+        } else {
+            lyNama.setError(null);
+            valid = true;
+        }
+
+        if (!rbL.isChecked() || !rbP.isChecked()){
+            Snackbar.make(rgJk, "Jenis kelamin belum dipilih!", BaseTransientBottomBar.LENGTH_SHORT).show();
+            valid = false;
+        } else {
+            valid = true;
+        }
+
+        if (spnKk.getSelectedItemPosition()==0){
+            Snackbar.make(spnKk, "Jenis kelamin belum dipilih!", BaseTransientBottomBar.LENGTH_SHORT).show();
+            valid = false;
+        } else {
+            valid = true;
+        }
+
+        return valid;
     }
 
     private void resetForm(){
