@@ -56,7 +56,7 @@ public class UpdateActivity extends AppCompatActivity {
         siswa = db.readSiswa(msg);
         inpNis.setText(String.valueOf(siswa.getNis()));
         inpNis.setEnabled(false);
-        inpNama.setText(siswa.getNamaSiwa());
+        inpNama.setText(siswa.getNamaSiswa());
         if (siswa.getJenisKelamin().equals("Laki-laki")){
             rbL.setChecked(true);
             rbP.setChecked(false);

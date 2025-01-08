@@ -35,7 +35,7 @@ public class SiswaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         ItemViewHolder itemView = (ItemViewHolder) holder;
         Siswa s = siswaList.get(position);
         itemView.vNis.setText(String.valueOf(s.getNis()));
-        itemView.vNama.setText(s.getNamaSiwa());
+        itemView.vNama.setText(s.getNamaSiswa());
         itemView.vJk.setText(s.getJenisKelamin());
         itemView.vKK.setText(s.getKonsentrasiKeahlian());
 

@@ -2,13 +2,13 @@ package com.tatay.crudsqlitemaster;
 
 public class Siswa {
     private int nis;
-    private String namaSiwa;
+    private String namaSiswa;
     private String jenisKelamin;
     private String konsentrasiKeahlian;
 
     public Siswa(int nis, String nama, String jk, String kk){
         this.nis=nis;
-        this.namaSiwa=nama;
+        this.namaSiswa=nama;
         this.jenisKelamin=jk;
         this.konsentrasiKeahlian=kk;
     }
@@ -17,8 +17,8 @@ public class Siswa {
         return nis;
     }
 
-    public String getNamaSiwa() {
-        return namaSiwa;
+    public String getNamaSiswa() {
+        return namaSiswa;
     }
 
     public String getJenisKelamin() {

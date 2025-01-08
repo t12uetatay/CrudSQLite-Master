@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SiswaAdapter.Adap
 
     @Override
     public void onClick(Siswa siswa) {
-        Toast.makeText(getApplicationContext(), siswa.getNamaSiwa(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), siswa.getNamaSiswa(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements SiswaAdapter.Adap
     private void actionDelete(Siswa siswa){
         new MaterialAlertDialogBuilder(MainActivity.this)
                 .setTitle("Konfirmasi!")
-                .setMessage("Anda yakin ingin menghapus"+siswa.getNamaSiwa()+"?")
+                .setMessage("Anda yakin ingin menghapus"+siswa.getNamaSiswa()+"?")
                 .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements SiswaAdapter.Adap
     private void showActionsDialog(Siswa siswa) {
         CharSequence[] items = {"Edit", "Hapus"};
         new MaterialAlertDialogBuilder(MainActivity.this)
-                .setTitle(siswa.getNamaSiwa())
+                .setTitle(siswa.getNamaSiswa())
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
