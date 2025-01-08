@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CrudSQLite-Master</string>
+    <array name="pilihan_kk">
+        <item>Pilih</item>
+        <item>Akuntansi Lembaga Keuangan</item>
+        <item>Pengembangan Perangkat Lunak dan Gim</item>
+        <item>Teknik Instalasi Tenaga Listrik</item>
+        <item>Teknik Kendaraan Ringan</item>
+        <item>Teknik Permesinan</item>
+        <item>Teknik Sepeda Motor</item>
+    </array>
+</resources>

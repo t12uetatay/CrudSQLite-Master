@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="8dp"
+    android:visibility="visible"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivGender"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_account"/>
+
+            <TextView
+                android:id="@+id/textNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_toRightOf="@id/ivGender"
+                android:text="Nama Siswa"
+                android:textStyle="bold"
+                android:layout_toLeftOf="@id/more_menu"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textNis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ivGender"
+                android:text="NIS"
+                android:textSize="12sp"
+                android:layout_toLeftOf="@id/more_menu"
+                android:layout_below="@id/textNama" />
+
+            <ImageView
+                android:id="@+id/more_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_24"
+                android:padding="4dp"
+                android:layout_alignParentEnd="true"/>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#80D1D1D1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textJk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:drawablePadding="8dp"
+                android:text="Jenis Kelamin" />
+
+            <TextView
+                android:id="@+id/textKk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:drawablePadding="8dp"
+                android:text="Konsentrasi Keahlian" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
